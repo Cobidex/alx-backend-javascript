@@ -1,6 +1,6 @@
-function getResponseFromAPI() {
+export default function getResponseFromAPI() {
   return new Promise((resolve, reject) => {
-    fetch('https://example.com/api/data')
+    fetch('https://github.com/api/data')
       .then(response => {
         if (response.ok) {
           resolve(response.json());
