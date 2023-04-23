@@ -1,8 +1,8 @@
-export default function taskBlock(val) {
+export default function taskBlock(trueOrFalse) {
   let task = false;
   let task2 = true;
 
-  if (val) {
+  if (trueOrFalse) {
     let task = true;
     let task2 = false;
   }
