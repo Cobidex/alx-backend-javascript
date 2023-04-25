@@ -5,7 +5,7 @@ export default function updateStudentGradeByCity(students, city, newGrades) {
       const gradeOb = newGrades
         .filter((gradeOb) => student.id === gradeOb.studentId)
         .map((gradeOb) => gradeOb.grade)[0];
-      const grade = gradeOb ? gradeOb.grade : 'N/A';
+      const grade = gradeOb ? gradeOb : 'N/A';
       return { ...student, grade };
     });
 }
