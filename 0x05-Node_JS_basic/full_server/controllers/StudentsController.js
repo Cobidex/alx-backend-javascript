@@ -1,9 +1,8 @@
 import readDatabase from '../utils';
 
-const path = process.argv[2];
-
 class StudentsController {
   static getAllStudents(request, response) {
+    const path = process.argv[2];
     readDatabase(path)
       .then((data) => {
         response.statusCode = 200;
@@ -20,6 +19,7 @@ class StudentsController {
     if (major !== 'SWE' && major !== 'CS') {
       response.status(500).send('Major parameter must be CS or SWE');
     } else {
+      const path = process.argv[2];
       readDatabase(path)
         .then((data) => {
           const lines = data.split('\n');
