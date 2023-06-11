@@ -13,7 +13,7 @@ app.get('/', (request, response) => {
 app.get('/students', (request, response) => {
   countStudents(process.argv[2])
     .then((data) => {
-      response.send(data);
+      response.send(`This is the list of our students\n${data}`);
     })
     .catch((error) => {
       response.send(error.message);
