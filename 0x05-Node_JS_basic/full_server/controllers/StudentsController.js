@@ -1,8 +1,10 @@
 import readDatabase from '../utils';
 
+const path = process.argv[2];
+
 class StudentsController {
   static getAllStudents(request, response) {
-    readDatabase('database.csv')
+    readDatabase(path)
       .then((data) => {
         response.statusCode = 200;
         response.send(`This is the list of our students\n${data}`);
@@ -18,7 +20,7 @@ class StudentsController {
     if (major !== 'SWE' && major !== 'CS') {
       response.status(500).send('Major parameter must be CS or SWE');
     } else {
-      readDatabase('database.csv')
+      readDatabase(path)
         .then((data) => {
           const lines = data.split('\n');
           for (const line of lines) {
